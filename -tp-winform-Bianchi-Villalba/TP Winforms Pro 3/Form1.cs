@@ -16,5 +16,10 @@ namespace TP_Winforms_Pro_3
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
