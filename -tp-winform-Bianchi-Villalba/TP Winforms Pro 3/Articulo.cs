@@ -16,6 +16,11 @@ namespace TP_Winforms_Pro_3
         private string ImagenLink;
         private float Precio;
 
+        public string setGetNombre
+        {
+            get { return Nombre; }
+            set { Nombre = value; }
+        }
         public int Codigo{
             get { return CodArt; }
             set { CodArt = value;  }
