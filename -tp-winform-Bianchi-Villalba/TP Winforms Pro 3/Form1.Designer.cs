@@ -35,6 +35,7 @@
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
+            this.Descripcion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,8 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
+            this.btnAgregar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAgregar_MouseMove);
             // 
             // btnModificar
             // 
@@ -67,6 +70,8 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.MouseLeave += new System.EventHandler(this.btnModificar_MouseLeave);
+            this.btnModificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnModificar_MouseMove);
             // 
             // btnEliminar
             // 
@@ -78,6 +83,8 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.MouseLeave += new System.EventHandler(this.btnEliminar_MouseLeave);
+            this.btnEliminar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnEliminar_MouseMove);
             // 
             // btnBusqueda
             // 
@@ -89,6 +96,8 @@
             this.btnBusqueda.TabIndex = 4;
             this.btnBusqueda.Text = "Busqueda";
             this.btnBusqueda.UseVisualStyleBackColor = false;
+            this.btnBusqueda.MouseLeave += new System.EventHandler(this.btnBusqueda_MouseLeave);
+            this.btnBusqueda.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnBusqueda_MouseMove);
             // 
             // btnListar
             // 
@@ -100,6 +109,8 @@
             this.btnListar.TabIndex = 5;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = false;
+            this.btnListar.MouseLeave += new System.EventHandler(this.btnListar_MouseLeave);
+            this.btnListar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnListar_MouseMove);
             // 
             // btnDetalle
             // 
@@ -111,12 +122,24 @@
             this.btnDetalle.TabIndex = 6;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.MouseLeave += new System.EventHandler(this.btnDetalle_MouseLeave);
+            this.btnDetalle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnDetalle_MouseMove);
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSize = true;
+            this.Descripcion.Location = new System.Drawing.Point(358, 233);
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Size = new System.Drawing.Size(84, 13);
+            this.Descripcion.TabIndex = 7;
+            this.Descripcion.Text = "Elija una Opción";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 358);
+            this.ClientSize = new System.Drawing.Size(644, 361);
+            this.Controls.Add(this.Descripcion);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnBusqueda);
@@ -124,10 +147,13 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulo);
+            this.MinimumSize = new System.Drawing.Size(660, 400);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App";
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -140,6 +166,7 @@
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Label Descripcion;
     }
 }
 
