@@ -16,6 +16,7 @@ namespace TP_Winforms_Pro_3
         private string ImagenLink;
         private float Precio;
 
+        //seters y geters
         public string setGetNombre
         {
             get { return Nombre; }
@@ -49,6 +50,11 @@ namespace TP_Winforms_Pro_3
         {
             get { return Precio; }
             set { Precio = value; }
+        }
+
+        //Constructor
+        public Articulo()
+        {
         }
     }
 }
