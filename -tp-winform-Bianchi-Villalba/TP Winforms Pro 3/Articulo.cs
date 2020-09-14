@@ -8,48 +8,48 @@ namespace TP_Winforms_Pro_3
 {
     class Articulo
     {
-        private int CodArt;
-        private string Nombre;
-        private string Descripcion;
-        private string Marca;
-        private string Categoria;
-        private string ImagenLink;
-        private float Precio;
+        private int codArt;
+        private string nombre;
+        private string descripcion;
+        private string marca;
+        private string categoria;
+        private string imagenLink;
+        private float precio;
 
         //seters y geters
-        public string setGetNombre
+        public string Nombre
         {
-            get { return Nombre; }
-            set { Nombre = value; }
+            get { return nombre; }
+            set { nombre = value; }
         }
         public int Codigo{
-            get { return CodArt; }
-            set { CodArt = value;  }
+            get { return codArt; }
+            set { codArt = value;  }
         }
-        public String SetGetDescripcion
+        public String Descripcion
         {
-            get { return Descripcion; }
-            set { Descripcion = value; }
+            get { return descripcion; }
+            set { descripcion = value; }
         }
-        public String SetGetMarca
+        public String Marca
         {
-            get { return Marca; }
-            set { Marca = value; }
+            get { return marca; }
+            set { marca = value; }
         }
-        public String SetGetCategoria
+        public String Categoria
         {
-            get { return Categoria; }
-            set { Categoria = value; }
+            get { return categoria; }
+            set { categoria = value; }
         }
-        public String SetGetImagen
+        public String Imagen
         {
-            get { return ImagenLink; }
-            set { ImagenLink = value; }
+            get { return imagenLink; }
+            set { imagenLink = value; }
         }
-        public float SetGetPrecio
+        public float Precio
         {
-            get { return Precio; }
-            set { Precio = value; }
+            get { return precio; }
+            set { precio = value; }
         }
 
         //Constructor

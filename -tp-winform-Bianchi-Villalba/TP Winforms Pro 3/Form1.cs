@@ -100,7 +100,9 @@ namespace TP_Winforms_Pro_3
         private void btnListar_Click(object sender, EventArgs e)
         {
             /*falta!!! :P*/
-            SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+           // SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            SqlConnection conexion = new SqlConnection("server=DESKTOP-I91JBL3\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+
             SqlCommand comando = new SqlCommand("Select * from ARTICULOS", conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = comando;
@@ -112,7 +114,9 @@ namespace TP_Winforms_Pro_3
 
         private void btnConectarBD_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+           // SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+             SqlConnection conexion = new SqlConnection("server=DESKTOP-I91JBL3\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+
             try
             {
                 conexion.Open();
@@ -122,6 +126,12 @@ namespace TP_Winforms_Pro_3
             {
                 MessageBox.Show("No se pudo conectar! :(");
             }
+        }
+
+        private void clickModificar(object sender, MouseEventArgs e)
+        {
+            Modificar ventana = new Modificar();
+            ventana.ShowDialog();
         }
     }
 }

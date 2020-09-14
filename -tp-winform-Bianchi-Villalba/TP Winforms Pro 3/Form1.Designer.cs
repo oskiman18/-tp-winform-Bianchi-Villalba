@@ -73,6 +73,7 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clickModificar);
             this.btnModificar.MouseLeave += new System.EventHandler(this.btnModificar_MouseLeave);
             this.btnModificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnModificar_MouseMove);
             // 
