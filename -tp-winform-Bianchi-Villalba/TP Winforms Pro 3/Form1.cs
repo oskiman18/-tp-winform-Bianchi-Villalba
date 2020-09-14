@@ -83,5 +83,11 @@ namespace TP_Winforms_Pro_3
             Descripcion.Text = "Elimina un articulo seleccionado del Catálogo";
 
         }
+
+        private void btnClick(object sender, MouseEventArgs e)
+        {
+            Agregar ventana = new Agregar();
+            ventana.Show();
+        }
     }
 }

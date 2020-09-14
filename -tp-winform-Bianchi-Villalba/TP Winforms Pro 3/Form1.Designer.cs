@@ -57,6 +57,7 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnClick);
             this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
             this.btnAgregar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAgregar_MouseMove);
             // 
