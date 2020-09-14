@@ -55,6 +55,7 @@ namespace TP_Winforms_Pro_3
         //Constructor
         public Articulo()
         {
+
         }
     }
 }

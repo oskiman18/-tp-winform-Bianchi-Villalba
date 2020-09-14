@@ -1,6 +1,6 @@
 ﻿namespace TP_Winforms_Pro_3
 {
-    partial class Form1
+    partial class Inicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.

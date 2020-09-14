@@ -20,18 +20,14 @@ namespace TP_Winforms_Pro_3
 
         private void Modificar_Load(object sender, EventArgs e)
         {
-            
-
             codArt.Text = aux.Codigo.ToString();
             nomArt.Text = aux.Nombre;
             catArt.Text = aux.Categoria;
             marcArt.Text = aux.Marca;
             precArt.Text = aux.Precio.ToString();
             descArt.Text = aux.Descripcion;
-            if (checkBox1.Checked) aux.Codigo = int.Parse(newCod.Text);
-            if (checkBox2.Checked) aux.Nombre = newNombre.Text;
-            if (checkBox3.Checked) aux.Categoria = newCat.SelectedItem.ToString();
-        }
+ 
+        }  
 
         private void clickCancelar(object sender, MouseEventArgs e)
         {
@@ -40,9 +36,15 @@ namespace TP_Winforms_Pro_3
 
         private void clickConfirmar(object sender, MouseEventArgs e)
         {
-            
 
+            if (checkBox1.Checked) aux.Codigo = int.Parse(newCod.Text);
+            if (checkBox2.Checked) aux.Nombre = newNombre.Text;
+            if (checkBox3.Checked) aux.Categoria = newCat.SelectedItem.ToString();
+            if (checkBox4.Checked) aux.Marca = newMarca.SelectedItem.ToString();
+            // if (!checkBox5.Checked) aux.Precio = float.Parse(newPrecio.Text);
+            if (!checkBox6.Checked) aux.Descripcion = newDesc.Text;
             this.Close();
         }
+
     }
 }

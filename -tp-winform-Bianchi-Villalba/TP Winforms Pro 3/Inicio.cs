@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace TP_Winforms_Pro_3
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
 
-        public Form1()
+        public Inicio()
         {
             InitializeComponent();
         }
@@ -89,7 +89,7 @@ namespace TP_Winforms_Pro_3
         private void btnClick(object sender, MouseEventArgs e)
         {
             Agregar ventana = new Agregar();
-            ventana.Show();
+            ventana.ShowDialog();
         }
 
         private void dgvArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -102,8 +102,7 @@ namespace TP_Winforms_Pro_3
             /*falta!!! :P*/
            // SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
             SqlConnection conexion = new SqlConnection("server=DESKTOP-I91JBL3\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-
-            SqlCommand comando = new SqlCommand("Select * from ARTICULOS", conexion);
+            SqlCommand comando = new SqlCommand("Select * from ARTICULOS" , conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable tabla = new DataTable();
