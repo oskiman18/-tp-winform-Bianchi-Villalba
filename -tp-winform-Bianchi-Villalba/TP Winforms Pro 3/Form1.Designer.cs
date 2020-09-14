@@ -36,6 +36,7 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.Descripcion = new System.Windows.Forms.Label();
+            this.btnConectarBD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.dgvArticulo.Name = "dgvArticulo";
             this.dgvArticulo.Size = new System.Drawing.Size(619, 196);
             this.dgvArticulo.TabIndex = 0;
+            this.dgvArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulo_CellContentClick);
             // 
             // btnAgregar
             // 
@@ -110,6 +112,7 @@
             this.btnListar.TabIndex = 5;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = false;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             this.btnListar.MouseLeave += new System.EventHandler(this.btnListar_MouseLeave);
             this.btnListar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnListar_MouseMove);
             // 
@@ -135,11 +138,22 @@
             this.Descripcion.TabIndex = 7;
             this.Descripcion.Text = "Elija una Opción";
             // 
+            // btnConectarBD
+            // 
+            this.btnConectarBD.Location = new System.Drawing.Point(538, 250);
+            this.btnConectarBD.Name = "btnConectarBD";
+            this.btnConectarBD.Size = new System.Drawing.Size(94, 48);
+            this.btnConectarBD.TabIndex = 8;
+            this.btnConectarBD.Text = "ConectarBD";
+            this.btnConectarBD.UseVisualStyleBackColor = true;
+            this.btnConectarBD.Click += new System.EventHandler(this.btnConectarBD_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 361);
+            this.Controls.Add(this.btnConectarBD);
             this.Controls.Add(this.Descripcion);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnListar);
@@ -168,6 +182,7 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label Descripcion;
+        private System.Windows.Forms.Button btnConectarBD;
     }
 }
 

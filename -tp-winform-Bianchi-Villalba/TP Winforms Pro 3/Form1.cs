@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace TP_Winforms_Pro_3
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -88,6 +90,38 @@ namespace TP_Winforms_Pro_3
         {
             Agregar ventana = new Agregar();
             ventana.Show();
+        }
+
+        private void dgvArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            /*falta!!! :P*/
+            SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            SqlCommand comando = new SqlCommand("Select * from ARTICULOS", conexion);
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgvArticulo.DataSource = tabla;
+            
+        }
+
+        private void btnConectarBD_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            try
+            {
+                conexion.Open();
+                MessageBox.Show("Conectado!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo conectar! :(");
+            }
         }
     }
 }
