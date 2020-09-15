@@ -38,13 +38,13 @@
             this.boxCod = new System.Windows.Forms.TextBox();
             this.boxNombre = new System.Windows.Forms.TextBox();
             this.boxPrecio = new System.Windows.Forms.TextBox();
-            this.boxCat = new System.Windows.Forms.ListBox();
-            this.boxMarca = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.boxImage = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.boxMarca = new System.Windows.Forms.ComboBox();
+            this.boxCat = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,22 +131,6 @@
             this.boxPrecio.Size = new System.Drawing.Size(282, 20);
             this.boxPrecio.TabIndex = 11;
             // 
-            // boxCat
-            // 
-            this.boxCat.FormattingEnabled = true;
-            this.boxCat.Location = new System.Drawing.Point(106, 137);
-            this.boxCat.Name = "boxCat";
-            this.boxCat.Size = new System.Drawing.Size(282, 17);
-            this.boxCat.TabIndex = 12;
-            // 
-            // boxMarca
-            // 
-            this.boxMarca.FormattingEnabled = true;
-            this.boxMarca.Location = new System.Drawing.Point(106, 182);
-            this.boxMarca.Name = "boxMarca";
-            this.boxMarca.Size = new System.Drawing.Size(282, 17);
-            this.boxMarca.TabIndex = 13;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -192,18 +176,34 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // boxMarca
+            // 
+            this.boxMarca.FormattingEnabled = true;
+            this.boxMarca.Location = new System.Drawing.Point(106, 179);
+            this.boxMarca.Name = "boxMarca";
+            this.boxMarca.Size = new System.Drawing.Size(282, 21);
+            this.boxMarca.TabIndex = 19;
+            // 
+            // boxCat
+            // 
+            this.boxCat.FormattingEnabled = true;
+            this.boxCat.Location = new System.Drawing.Point(106, 134);
+            this.boxCat.Name = "boxCat";
+            this.boxCat.Size = new System.Drawing.Size(282, 21);
+            this.boxCat.TabIndex = 20;
+            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.boxCat);
+            this.Controls.Add(this.boxMarca);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.boxImage);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.boxMarca);
-            this.Controls.Add(this.boxCat);
             this.Controls.Add(this.boxPrecio);
             this.Controls.Add(this.boxNombre);
             this.Controls.Add(this.boxCod);
@@ -217,6 +217,7 @@
             this.Name = "Agregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Nuevo Artículo";
+            this.Load += new System.EventHandler(this.Agregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,12 +236,12 @@
         private System.Windows.Forms.TextBox boxCod;
         private System.Windows.Forms.TextBox boxNombre;
         private System.Windows.Forms.TextBox boxPrecio;
-        private System.Windows.Forms.ListBox boxCat;
-        private System.Windows.Forms.ListBox boxMarca;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox boxImage;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox boxMarca;
+        private System.Windows.Forms.ComboBox boxCat;
     }
 }

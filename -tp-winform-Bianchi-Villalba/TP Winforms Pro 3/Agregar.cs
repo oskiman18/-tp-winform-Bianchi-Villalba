@@ -16,5 +16,14 @@ namespace TP_Winforms_Pro_3
         {
             InitializeComponent();
         }
+
+        private void Agregar_Load(object sender, EventArgs e)
+        {
+            Categorias aux = new Categorias();
+            boxCat.DataSource = aux.Listar();
+            Marcas aux1 = new Marcas();
+            boxMarca.DataSource = aux1.Listar();
+                
+        }
     }
 }

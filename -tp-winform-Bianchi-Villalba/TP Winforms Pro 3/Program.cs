@@ -14,8 +14,11 @@ namespace TP_Winforms_Pro_3
         [STAThread]
         static void Main()
         {
+            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Articulo reg = new Articulo();
             Application.Run(new Inicio());
 
         }

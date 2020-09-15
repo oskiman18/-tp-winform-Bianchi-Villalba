@@ -19,6 +19,7 @@ namespace TP_Winforms_Pro_3
             InitializeComponent();
         }
 
+
         private void btnAgregar_MouseMove(object sender, MouseEventArgs e)
         {
             Descripcion.Text = "Agrega un articulo nuevo al Catalogo";
@@ -43,7 +44,7 @@ namespace TP_Winforms_Pro_3
 
         private void btnListar_MouseLeave(object sender, EventArgs e)
         {
-            Descripcion.Text = "Elija una Opción"; 
+            Descripcion.Text = "Elija una Opción";
         }
 
         private void btnListar_MouseMove(object sender, MouseEventArgs e)
@@ -94,27 +95,32 @@ namespace TP_Winforms_Pro_3
 
         private void dgvArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
             /*falta!!! :P*/
-           // SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-            SqlConnection conexion = new SqlConnection("server=DESKTOP-I91JBL3\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-            SqlCommand comando = new SqlCommand("Select * from ARTICULOS" , conexion);
+            // SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            SqlCommand comando = new SqlCommand("Select * from ARTICULOS", conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
             dgvArticulo.DataSource = tabla;
-            
+
         }
 
-        private void btnConectarBD_Click(object sender, EventArgs e)
+        private void clickModificar(object sender, MouseEventArgs e)
         {
-           // SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-             SqlConnection conexion = new SqlConnection("server=DESKTOP-I91JBL3\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            Modificar ventana = new Modificar();
+            ventana.ShowDialog();
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
 
             try
             {
@@ -123,14 +129,10 @@ namespace TP_Winforms_Pro_3
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo conectar! :(");
+                MessageBox.Show("Conectame la Base papu! :(");
             }
         }
-
-        private void clickModificar(object sender, MouseEventArgs e)
-        {
-            Modificar ventana = new Modificar();
-            ventana.ShowDialog();
-        }
+        
+      
     }
 }

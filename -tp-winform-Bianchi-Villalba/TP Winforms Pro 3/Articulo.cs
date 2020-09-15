@@ -22,9 +22,10 @@ namespace TP_Winforms_Pro_3
             get { return nombre; }
             set { nombre = value; }
         }
-        public int Codigo{
+        public int Codigo
+        {
             get { return codArt; }
-            set { codArt = value;  }
+            set { codArt = value; }
         }
         public String Descripcion
         {
@@ -59,3 +60,6 @@ namespace TP_Winforms_Pro_3
         }
     }
 }
+
+  
+

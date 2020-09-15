@@ -36,7 +36,6 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.Descripcion = new System.Windows.Forms.Label();
-            this.btnConectarBD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,22 +138,11 @@
             this.Descripcion.TabIndex = 7;
             this.Descripcion.Text = "Elija una Opción";
             // 
-            // btnConectarBD
-            // 
-            this.btnConectarBD.Location = new System.Drawing.Point(538, 250);
-            this.btnConectarBD.Name = "btnConectarBD";
-            this.btnConectarBD.Size = new System.Drawing.Size(94, 48);
-            this.btnConectarBD.TabIndex = 8;
-            this.btnConectarBD.Text = "ConectarBD";
-            this.btnConectarBD.UseVisualStyleBackColor = true;
-            this.btnConectarBD.Click += new System.EventHandler(this.btnConectarBD_Click);
-            // 
-            // Form1
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 361);
-            this.Controls.Add(this.btnConectarBD);
             this.Controls.Add(this.Descripcion);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnListar);
@@ -164,9 +152,10 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulo);
             this.MinimumSize = new System.Drawing.Size(660, 400);
-            this.Name = "Form1";
+            this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,7 +172,6 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label Descripcion;
-        private System.Windows.Forms.Button btnConectarBD;
     }
 }
 

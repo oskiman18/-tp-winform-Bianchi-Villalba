@@ -7,25 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TP_Winforms_Pro_3
 {
     public partial class Modificar : Form
     {
-        Articulo aux = new Articulo();
+        Articulo reg = new Articulo();
         public Modificar()
         {
             InitializeComponent();
         }
-
+     
         private void Modificar_Load(object sender, EventArgs e)
         {
-            codArt.Text = aux.Codigo.ToString();
-            nomArt.Text = aux.Nombre;
-            catArt.Text = aux.Categoria;
-            marcArt.Text = aux.Marca;
-            precArt.Text = aux.Precio.ToString();
-            descArt.Text = aux.Descripcion;
+            codArt.Text = reg.Codigo.ToString();
+            nomArt.Text = reg.Nombre;
+            catArt.Text = reg.Categoria;
+            marcArt.Text = reg.Marca;
+            precArt.Text = reg.Precio.ToString();
+            descArt.Text = reg.Descripcion;
  
         }  
 
@@ -36,15 +37,17 @@ namespace TP_Winforms_Pro_3
 
         private void clickConfirmar(object sender, MouseEventArgs e)
         {
-
-            if (checkBox1.Checked) aux.Codigo = int.Parse(newCod.Text);
-            if (checkBox2.Checked) aux.Nombre = newNombre.Text;
-            if (checkBox3.Checked) aux.Categoria = newCat.SelectedItem.ToString();
-            if (checkBox4.Checked) aux.Marca = newMarca.SelectedItem.ToString();
-            // if (!checkBox5.Checked) aux.Precio = float.Parse(newPrecio.Text);
-            if (!checkBox6.Checked) aux.Descripcion = newDesc.Text;
-            this.Close();
+          
+            if (!checkBox1.Checked) reg.Codigo = int.Parse(newCod.Text);
+            if (!checkBox2.Checked) reg.Nombre = newNombre.Text;
+            if (!checkBox3.Checked) reg.Categoria = newCat.SelectedItem.ToString();
+            if (!checkBox4.Checked) reg.Marca = newMarca.SelectedItem.ToString();
+            if (!checkBox5.Checked) reg.Precio = float.Parse(newPrecio.Text);
+            if (!checkBox6.Checked) reg.Descripcion = newDesc.Text;
+             this.Close();
         }
+
+
 
     }
 }
