@@ -94,15 +94,14 @@ namespace TP_Winforms_Pro_3
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            /*falta!!! :P*/
-            SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-            SqlCommand comando = new SqlCommand("select A.Id, A.Codigo,A.Nombre, C.Descripcion as Categorias, M.Descripcion as Marca,A.ImagenUrl as Imagen,A.Precio from ARTICULOS as A join CATEGORIAS as C on C.Id=A.IdCategoria join MARCAS as M on M.Id = A.IdMarca", conexion);
+            string query = "select A.Id, A.Codigo,A.Nombre, C.Descripcion as Categoria, M.Descripcion as Marca,A.ImagenUrl as Imagen,A.Precio from ARTICULOS as A left join CATEGORIAS as C on C.Id=A.IdCategoria left join MARCAS as M on M.Id = A.IdMarca";
+            ConexionSQL conexion = new ConexionSQL();
+            SqlCommand comando = new SqlCommand(query, conexion.directorio);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
             dgvArticulo.DataSource = tabla;
-
         }
 
         private void clickModificar(object sender, MouseEventArgs e)
@@ -113,16 +112,20 @@ namespace TP_Winforms_Pro_3
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-
+            //SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            ConexionSQL conexion = new ConexionSQL();
             try
             {
-                conexion.Open();
+                conexion.Abir();
                 textEstado.Text = "Conectado";
             }
             catch (Exception)
             {
                 MessageBox.Show("Conectame la Base papu! :(");
+            }
+            finally
+            {
+                conexion.Cerrar();
             }
         }
     }

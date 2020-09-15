@@ -29,7 +29,7 @@ namespace TP_Winforms_Pro_3
             descArt.Text = reg.Descripcion;
             urlImagen.Text = reg.Imagen;
             Categorias aux = new Categorias();
-            newCat.DataSource = aux.Listar();
+            //newCat.DataSource = aux.Listar();
             Marcas aux1 = new Marcas();
             newMarca.DataSource = aux1.Listar();
 

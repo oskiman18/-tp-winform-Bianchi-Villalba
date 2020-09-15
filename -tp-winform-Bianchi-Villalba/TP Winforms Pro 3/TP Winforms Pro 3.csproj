@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Articulo.cs" />
     <Compile Include="Categorias.cs" />
+    <Compile Include="ConexionSQL.cs" />
     <Compile Include="Marcas.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>

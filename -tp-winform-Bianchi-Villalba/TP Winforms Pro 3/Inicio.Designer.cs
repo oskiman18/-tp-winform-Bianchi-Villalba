@@ -37,7 +37,10 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.Descripcion = new System.Windows.Forms.Label();
             this.textEstado = new System.Windows.Forms.Label();
+            this.pbArticulo = new System.Windows.Forms.PictureBox();
+            this.lblEstado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvArticulo
@@ -45,7 +48,7 @@
             this.dgvArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulo.Location = new System.Drawing.Point(12, 25);
             this.dgvArticulo.Name = "dgvArticulo";
-            this.dgvArticulo.Size = new System.Drawing.Size(619, 196);
+            this.dgvArticulo.Size = new System.Drawing.Size(549, 196);
             this.dgvArticulo.TabIndex = 0;
             this.dgvArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulo_CellContentClick);
             // 
@@ -133,7 +136,7 @@
             // Descripcion
             // 
             this.Descripcion.AutoSize = true;
-            this.Descripcion.Location = new System.Drawing.Point(355, 236);
+            this.Descripcion.Location = new System.Drawing.Point(361, 263);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Size = new System.Drawing.Size(84, 13);
             this.Descripcion.TabIndex = 7;
@@ -142,17 +145,36 @@
             // textEstado
             // 
             this.textEstado.AutoSize = true;
-            this.textEstado.Location = new System.Drawing.Point(12, 9);
+            this.textEstado.Location = new System.Drawing.Point(76, 6);
             this.textEstado.Name = "textEstado";
             this.textEstado.Size = new System.Drawing.Size(70, 13);
             this.textEstado.TabIndex = 8;
             this.textEstado.Text = "estadoServer";
             // 
+            // pbArticulo
+            // 
+            this.pbArticulo.Location = new System.Drawing.Point(584, 25);
+            this.pbArticulo.Name = "pbArticulo";
+            this.pbArticulo.Size = new System.Drawing.Size(176, 196);
+            this.pbArticulo.TabIndex = 9;
+            this.pbArticulo.TabStop = false;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(12, 6);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(58, 13);
+            this.lblEstado.TabIndex = 10;
+            this.lblEstado.Text = "EstadoBD:";
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 361);
+            this.ClientSize = new System.Drawing.Size(821, 361);
+            this.Controls.Add(this.lblEstado);
+            this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.textEstado);
             this.Controls.Add(this.Descripcion);
             this.Controls.Add(this.btnDetalle);
@@ -168,6 +190,7 @@
             this.Text = "App";
             this.Load += new System.EventHandler(this.Inicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +207,8 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label Descripcion;
         private System.Windows.Forms.Label textEstado;
+        private System.Windows.Forms.PictureBox pbArticulo;
+        private System.Windows.Forms.Label lblEstado;
     }
 }
 

@@ -10,7 +10,10 @@ namespace TP_Winforms_Pro_3
 {
     class Categorias
     {
+        ConexionSQL conexion = new ConexionSQL();
 
+
+        
         public int id { get; set; }
 
         public String nombre { get; set; }
@@ -49,7 +52,7 @@ namespace TP_Winforms_Pro_3
             return lista;
 
         }
-
+        
 
 
 
