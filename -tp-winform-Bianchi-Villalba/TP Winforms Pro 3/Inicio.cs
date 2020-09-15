@@ -96,7 +96,7 @@ namespace TP_Winforms_Pro_3
         {
             /*falta!!! :P*/
             SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-            SqlCommand comando = new SqlCommand("Select * from ARTICULOS", conexion);
+            SqlCommand comando = new SqlCommand("select A.Id, A.Codigo,A.Nombre, C.Descripcion as Categorias, M.Descripcion as Marca,A.ImagenUrl as Imagen,A.Precio from ARTICULOS as A join CATEGORIAS as C on C.Id=A.IdCategoria join MARCAS as M on M.Id = A.IdMarca", conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable tabla = new DataTable();
@@ -124,12 +124,6 @@ namespace TP_Winforms_Pro_3
             {
                 MessageBox.Show("Conectame la Base papu! :(");
             }
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            Articulo art = new Articulo();
-            Agregar aux = new Agregar();
         }
     }
 }

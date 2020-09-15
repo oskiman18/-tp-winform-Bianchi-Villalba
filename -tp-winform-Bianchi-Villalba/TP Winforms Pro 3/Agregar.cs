@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TP_Winforms_Pro_3
 {
@@ -41,9 +42,11 @@ namespace TP_Winforms_Pro_3
             Articulo aux = new Articulo();
             aux.CargarArticulo(int.Parse(boxCod.Text), boxNombre.Text, boxDesc.Text, boxMarca.SelectedItem.ToString(), boxCat.SelectedItem.ToString(), boxImage.Text, float.Parse(boxPrecio.Text)); ;
 
-
-
-
+            
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -6,8 +6,8 @@ namespace TP_Winforms_Pro_3
         private int codArt;
         private string nombre;
         private string descripcion;
-        private string marca;
-        private string categoria;
+        private string IDMarca;
+        private string IDCategoria;
         private string imagenLink;
         private float precio;
 
@@ -29,13 +29,13 @@ namespace TP_Winforms_Pro_3
         }
         public String Marca
         {
-            get { return marca; }
-            set { marca = value; }
+            get { return IDMarca; }
+            set { IDMarca = value; }
         }
         public String Categoria
         {
-            get { return categoria; }
-            set { categoria = value; }
+            get { return IDCategoria; }
+            set { IDCategoria = value; }
         }
         public String Imagen
         {
@@ -51,7 +51,7 @@ namespace TP_Winforms_Pro_3
         //Constructor
         public Articulo()
         {
-
+            
         }
 
         public void CargarArticulo(int codArt, string nombre, string descripcion, string marca,
@@ -60,8 +60,8 @@ namespace TP_Winforms_Pro_3
             this.codArt = codArt;
             this.nombre = nombre;
             this.descripcion = descripcion;
-            this.marca = marca;
-            this.categoria = categoria;
+            this.IDMarca = marca;
+            this.IDCategoria = categoria;
             this.imagenLink = imagenLink;
             this.precio = precio;
         }

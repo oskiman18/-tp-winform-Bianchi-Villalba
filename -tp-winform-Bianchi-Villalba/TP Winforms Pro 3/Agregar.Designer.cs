@@ -116,7 +116,6 @@
             this.boxCod.Name = "boxCod";
             this.boxCod.Size = new System.Drawing.Size(282, 20);
             this.boxCod.TabIndex = 7;
-            //this.boxCod.TextChanged += new System.EventHandler(this.boxCod_TextChanged);
             // 
             // boxNombre
             // 
@@ -156,6 +155,7 @@
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
