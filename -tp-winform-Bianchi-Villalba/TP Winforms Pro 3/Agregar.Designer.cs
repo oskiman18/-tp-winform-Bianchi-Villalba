@@ -116,6 +116,7 @@
             this.boxCod.Name = "boxCod";
             this.boxCod.Size = new System.Drawing.Size(282, 20);
             this.boxCod.TabIndex = 7;
+            //this.boxCod.TextChanged += new System.EventHandler(this.boxCod_TextChanged);
             // 
             // boxNombre
             // 

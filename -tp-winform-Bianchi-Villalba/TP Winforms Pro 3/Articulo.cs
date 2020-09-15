@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace TP_Winforms_Pro_3
 {
     class Articulo
@@ -57,6 +52,18 @@ namespace TP_Winforms_Pro_3
         public Articulo()
         {
 
+        }
+
+        public void CargarArticulo(int codArt, string nombre, string descripcion, string marca,
+                                   string categoria, string imagenLink, float precio)
+        {
+            this.codArt = codArt;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.marca = marca;
+            this.categoria = categoria;
+            this.imagenLink = imagenLink;
+            this.precio = precio;
         }
     }
 }

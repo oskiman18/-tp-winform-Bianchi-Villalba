@@ -25,5 +25,19 @@ namespace TP_Winforms_Pro_3
             boxMarca.DataSource = aux1.Listar();
                 
         }
+
+
+        
+        public void CargarBoxs()
+        {
+            Agregar aux = new Agregar();
+            int codArt = int.Parse(aux.boxCod.Text);
+            string nombre = aux.boxCod.Text;
+            string descripcion = aux.boxDesc.Text;
+            string marca = aux.boxMarca.Text;
+            string categoria = aux.boxCat.Text;
+            string imagenLink = aux.boxImage.Text;
+            float precio = float.Parse(aux.boxPrecio.Text);
+        }
     }
 }
