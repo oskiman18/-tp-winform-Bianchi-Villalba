@@ -18,7 +18,7 @@ namespace TP_Winforms_Pro_3
         {
             InitializeComponent();
         }
-     
+
         private void Modificar_Load(object sender, EventArgs e)
         {
             codArt.Text = reg.Codigo.ToString();
@@ -27,8 +27,14 @@ namespace TP_Winforms_Pro_3
             marcArt.Text = reg.Marca;
             precArt.Text = reg.Precio.ToString();
             descArt.Text = reg.Descripcion;
- 
-        }  
+            urlImagen.Text = reg.Imagen;
+            Categorias aux = new Categorias();
+            newCat.DataSource = aux.Listar();
+            Marcas aux1 = new Marcas();
+            newMarca.DataSource = aux1.Listar();
+
+
+        }
 
         private void clickCancelar(object sender, MouseEventArgs e)
         {
@@ -37,14 +43,14 @@ namespace TP_Winforms_Pro_3
 
         private void clickConfirmar(object sender, MouseEventArgs e)
         {
-          
+
             if (!checkBox1.Checked) reg.Codigo = int.Parse(newCod.Text);
             if (!checkBox2.Checked) reg.Nombre = newNombre.Text;
             if (!checkBox3.Checked) reg.Categoria = newCat.SelectedItem.ToString();
             if (!checkBox4.Checked) reg.Marca = newMarca.SelectedItem.ToString();
             if (!checkBox5.Checked) reg.Precio = float.Parse(newPrecio.Text);
             if (!checkBox6.Checked) reg.Descripcion = newDesc.Text;
-             this.Close();
+            this.Close();
         }
 
 

@@ -30,14 +30,20 @@ namespace TP_Winforms_Pro_3
         
         public void CargarBoxs()
         {
-            Agregar aux = new Agregar();
-            int codArt = int.Parse(aux.boxCod.Text);
-            string nombre = aux.boxCod.Text;
-            string descripcion = aux.boxDesc.Text;
-            string marca = aux.boxMarca.Text;
-            string categoria = aux.boxCat.Text;
-            string imagenLink = aux.boxImage.Text;
-            float precio = float.Parse(aux.boxPrecio.Text);
+            /* Agregar aux = new Agregar();
+             int codArt = int.Parse(aux.boxCod.Text);
+             string nombre = aux.boxCod.Text;
+             string descripcion = aux.boxDesc.Text;
+             string marca = aux.boxMarca.Text;
+             string categoria = aux.boxCat.Text;
+             string imagenLink = aux.boxImage.Text;
+             float precio = float.Parse(aux.boxPrecio.Text);*/
+            Articulo aux = new Articulo();
+            aux.CargarArticulo(int.Parse(boxCod.Text), boxNombre.Text, boxDesc.Text, boxMarca.SelectedItem.ToString(), boxCat.SelectedItem.ToString(), boxImage.Text, float.Parse(boxPrecio.Text)); ;
+
+
+
+
         }
     }
 }

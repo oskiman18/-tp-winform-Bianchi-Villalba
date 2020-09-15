@@ -95,7 +95,6 @@ namespace TP_Winforms_Pro_3
         private void btnListar_Click(object sender, EventArgs e)
         {
             /*falta!!! :P*/
-            // SqlConnection conexion = new SqlConnection("server=LAPTOP-HERNANVI\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
             SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
             SqlCommand comando = new SqlCommand("Select * from ARTICULOS", conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -119,6 +118,7 @@ namespace TP_Winforms_Pro_3
             try
             {
                 conexion.Open();
+                textEstado.Text = "Conectado";
             }
             catch (Exception)
             {
