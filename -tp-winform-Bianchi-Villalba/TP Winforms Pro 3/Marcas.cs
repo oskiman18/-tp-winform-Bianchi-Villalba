@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,14 +26,15 @@ namespace TP_Winforms_Pro_3
             return nombre;
         }
 
-        public List<Marcas> Listar()
+        public DataTable CargarCbox()
         {
-            SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+          /*  string directorio = "server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True";
+            SqlConnection conexion = new SqlConnection(directorio);
             SqlCommand comando = new SqlCommand("Select * from Marcas", conexion);
             SqlDataReader lector;
             List<Marcas> lista = new List<Marcas>();
 
-            conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True";
+            conexion.ConnectionString = directorio;
             comando.CommandType = System.Data.CommandType.Text;
             comando.Connection = conexion;
 
@@ -43,7 +45,18 @@ namespace TP_Winforms_Pro_3
                 lista.Add(new Marcas((int)lector["Id"], (string)lector["Descripcion"]));
             }
             lector.Close();
-            return lista;
+            return lista;*/
+            
+            string query = "select Id, Descripcion from MARCAS";
+            ConexionSQL conexion = new ConexionSQL();
+            conexion.Abir();
+            SqlCommand comando = new SqlCommand(query, conexion.directorio);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            conexion.Cerrar();
+
+            return tabla;   
 
         }
 

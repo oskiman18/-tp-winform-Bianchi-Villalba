@@ -31,25 +31,17 @@ namespace TP_Winforms_Pro_3
         }
 
 
-        public List<Categorias> Listar()
+        public DataTable CargarCbox()
         {
-            SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-            SqlCommand comando = new SqlCommand("Select * from Categorias", conexion);
-            SqlDataReader lector;
-            List<Categorias> lista = new List<Categorias>();
-
-            conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True";
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.Connection = conexion;
-
-            conexion.Open();
-            lector = comando.ExecuteReader();
-            while (lector.Read())
-            {
-                lista.Add(new Categorias((int)lector["Id"], (string)lector["Descripcion"]));
-            }
-            lector.Close();
-            return lista;
+            string query = "select Id, Descripcion from CATEGORIAS";
+            ConexionSQL conexion = new ConexionSQL();
+            conexion.Abir();
+            SqlCommand comando = new SqlCommand(query, conexion.directorio);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            conexion.Cerrar();
+            return tabla;
 
         }
         
