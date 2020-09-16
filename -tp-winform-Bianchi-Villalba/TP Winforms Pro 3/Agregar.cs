@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace TP_Winforms_Pro_3
 {
@@ -40,21 +41,21 @@ namespace TP_Winforms_Pro_3
             cboCat.ValueMember = "Id";
             cboCat.DisplayMember = "Descripcion";
             cboCat.DataSource = aux1.CargarCbox();
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
-
+            //SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
+            ConexionSQL conexion = new ConexionSQL();
             string query = "INSERT INTO ARTICULOS (Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio) VALUES (@Nombre,@Descripcion,@IdMarca,@IdCategoria,@ImagenUrl,@Precio)";
-            conexion.Open();
-
-            SqlCommand comando = new SqlCommand(query, conexion);
+            conexion.Abir();
+            int IdMarca = IDMarcaCboMarca();
+            int IdCategoria = IDCategoriaCboCat();
+            SqlCommand comando = new SqlCommand(query, conexion.directorio);
             comando.Parameters.AddWithValue("@Nombre", boxNombre.Text);
             comando.Parameters.AddWithValue("@Descripcion", boxPrecio.Text);
-            comando.Parameters.AddWithValue("@IdMarca", cboMarca.Text);
-            comando.Parameters.AddWithValue("@IdCategoria", cboCat.Text);
+            comando.Parameters.AddWithValue("@IdMarca", Convert.ToInt32(cboMarca.SelectedValue) );
+            comando.Parameters.AddWithValue("@IdCategoria", Convert.ToInt32(cboCat.SelectedValue) );
             comando.Parameters.AddWithValue("@ImagenUrl", boxImage.Text);
             comando.Parameters.AddWithValue("@Precio", boxPrecio.Text);
             comando.ExecuteNonQuery();
@@ -68,6 +69,25 @@ namespace TP_Winforms_Pro_3
                 MessageBox.Show("No se pudo insertar el articulo");
             }
         }
+        public int IDMarcaCboMarca()
+        {
+            //devuelvo el ID de la Marca
+            if (cboMarca.Text == "Samsung") return 1;
+            else if (cboMarca.Text == "Apple") return 2;
+            else if (cboMarca.Text == "Sony") return 3;
+            else if (cboMarca.Text == "Huawei") return 4;
+            else if (cboMarca.Text == "Motorola") return 5;
+            else return 0;
+        }
+        public int IDCategoriaCboCat()
+        {
+            if (cboCat.Text == "Celulares") return 1;
+            else if (cboCat.Text == "Televisores") return 2;
+            else if (cboCat.Text == "Media") return 3;
+            else if (cboCat.Text == "Audio") return 4;
+            else return 0;
+        }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
