@@ -46,17 +46,16 @@
             // dgvArticulo
             // 
             this.dgvArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulo.Location = new System.Drawing.Point(12, 25);
+            this.dgvArticulo.Location = new System.Drawing.Point(326, 9);
             this.dgvArticulo.Name = "dgvArticulo";
-            this.dgvArticulo.Size = new System.Drawing.Size(549, 196);
+            this.dgvArticulo.Size = new System.Drawing.Size(483, 340);
             this.dgvArticulo.TabIndex = 0;
-            this.dgvArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulo_CellContentClick);
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.Location = new System.Drawing.Point(37, 227);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 30);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(94, 49);
             this.btnAgregar.TabIndex = 1;
@@ -70,7 +69,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.Location = new System.Drawing.Point(137, 227);
+            this.btnModificar.Location = new System.Drawing.Point(212, 85);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(94, 49);
             this.btnModificar.TabIndex = 2;
@@ -84,7 +83,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.Location = new System.Drawing.Point(237, 282);
+            this.btnEliminar.Location = new System.Drawing.Point(12, 85);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 49);
             this.btnEliminar.TabIndex = 3;
@@ -97,7 +96,7 @@
             // 
             this.btnBusqueda.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBusqueda.Location = new System.Drawing.Point(37, 282);
+            this.btnBusqueda.Location = new System.Drawing.Point(112, 85);
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(94, 49);
             this.btnBusqueda.TabIndex = 4;
@@ -110,7 +109,7 @@
             // 
             this.btnListar.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListar.Location = new System.Drawing.Point(237, 227);
+            this.btnListar.Location = new System.Drawing.Point(212, 30);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(94, 49);
             this.btnListar.TabIndex = 5;
@@ -124,7 +123,7 @@
             // 
             this.btnDetalle.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDetalle.Location = new System.Drawing.Point(137, 282);
+            this.btnDetalle.Location = new System.Drawing.Point(112, 30);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(94, 49);
             this.btnDetalle.TabIndex = 6;
@@ -136,7 +135,7 @@
             // Descripcion
             // 
             this.Descripcion.AutoSize = true;
-            this.Descripcion.Location = new System.Drawing.Point(361, 263);
+            this.Descripcion.Location = new System.Drawing.Point(122, 9);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Size = new System.Drawing.Size(84, 13);
             this.Descripcion.TabIndex = 7;
@@ -145,7 +144,7 @@
             // textEstado
             // 
             this.textEstado.AutoSize = true;
-            this.textEstado.Location = new System.Drawing.Point(76, 6);
+            this.textEstado.Location = new System.Drawing.Point(61, 349);
             this.textEstado.Name = "textEstado";
             this.textEstado.Size = new System.Drawing.Size(70, 13);
             this.textEstado.TabIndex = 8;
@@ -153,16 +152,18 @@
             // 
             // pbArticulo
             // 
-            this.pbArticulo.Location = new System.Drawing.Point(584, 25);
+            this.pbArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbArticulo.Location = new System.Drawing.Point(12, 140);
             this.pbArticulo.Name = "pbArticulo";
-            this.pbArticulo.Size = new System.Drawing.Size(176, 196);
+            this.pbArticulo.Size = new System.Drawing.Size(294, 209);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulo.TabIndex = 9;
             this.pbArticulo.TabStop = false;
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(12, 6);
+            this.lblEstado.Location = new System.Drawing.Point(-3, 349);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(58, 13);
             this.lblEstado.TabIndex = 10;
@@ -197,8 +198,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvArticulo;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
@@ -209,6 +208,7 @@
         private System.Windows.Forms.Label textEstado;
         private System.Windows.Forms.PictureBox pbArticulo;
         private System.Windows.Forms.Label lblEstado;
+        public System.Windows.Forms.DataGridView dgvArticulo;
     }
 }
 

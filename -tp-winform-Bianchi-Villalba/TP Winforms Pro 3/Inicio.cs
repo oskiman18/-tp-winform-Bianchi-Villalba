@@ -87,21 +87,20 @@ namespace TP_Winforms_Pro_3
             ventana.ShowDialog();
         }
 
-        private void dgvArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnListar_Click(object sender, EventArgs e)
         {
-            string query = "select A.Id, A.Codigo,A.Nombre, C.Descripcion as Categoria, M.Descripcion as Marca,A.ImagenUrl as Imagen,A.Precio from ARTICULOS as A left join CATEGORIAS as C on C.Id=A.IdCategoria left join MARCAS as M on M.Id = A.IdMarca";
             ConexionSQL conexion = new ConexionSQL();
-            SqlCommand comando = new SqlCommand(query, conexion.directorio);
-            SqlDataAdapter adaptador = new SqlDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgvArticulo.DataSource = tabla;
+            DataTable tabla = conexion.ListarTodo();
+
+            try
+            {
+                //dgvArticulo.DataSource = tabla;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo abir la conexion para listar");
+            }
+
         }
 
         private void clickModificar(object sender, MouseEventArgs e)
@@ -112,7 +111,6 @@ namespace TP_Winforms_Pro_3
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            //SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True");
             ConexionSQL conexion = new ConexionSQL();
             try
             {

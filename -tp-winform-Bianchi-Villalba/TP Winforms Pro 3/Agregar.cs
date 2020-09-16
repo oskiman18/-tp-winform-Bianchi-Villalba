@@ -47,6 +47,7 @@ namespace TP_Winforms_Pro_3
         {
             ValidarIngresoEnComboBox();
             Insert();
+            
         }
         public void ValidarIngresoEnComboBox()
         {
