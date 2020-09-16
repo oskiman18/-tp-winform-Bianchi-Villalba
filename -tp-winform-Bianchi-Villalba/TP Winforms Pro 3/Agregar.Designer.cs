@@ -40,9 +40,11 @@
             this.boxImage = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cboCat = new System.Windows.Forms.ComboBox();
             this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.lblCod = new System.Windows.Forms.Label();
+            this.boxCod = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,14 +95,16 @@
             // 
             // boxDesc
             // 
+            this.boxDesc.BackColor = System.Drawing.SystemColors.MenuBar;
             this.boxDesc.Location = new System.Drawing.Point(108, 224);
             this.boxDesc.Multiline = true;
             this.boxDesc.Name = "boxDesc";
-            this.boxDesc.Size = new System.Drawing.Size(282, 135);
+            this.boxDesc.Size = new System.Drawing.Size(282, 63);
             this.boxDesc.TabIndex = 6;
             // 
             // boxNombre
             // 
+            this.boxNombre.BackColor = System.Drawing.SystemColors.MenuBar;
             this.boxNombre.Location = new System.Drawing.Point(108, 44);
             this.boxNombre.Name = "boxNombre";
             this.boxNombre.Size = new System.Drawing.Size(282, 20);
@@ -108,6 +112,7 @@
             // 
             // boxPrecio
             // 
+            this.boxPrecio.BackColor = System.Drawing.SystemColors.MenuBar;
             this.boxPrecio.Location = new System.Drawing.Point(108, 179);
             this.boxPrecio.Name = "boxPrecio";
             this.boxPrecio.Size = new System.Drawing.Size(282, 20);
@@ -116,7 +121,7 @@
             // lblImagen
             // 
             this.lblImagen.AutoSize = true;
-            this.lblImagen.Location = new System.Drawing.Point(419, 47);
+            this.lblImagen.Location = new System.Drawing.Point(419, 16);
             this.lblImagen.Name = "lblImagen";
             this.lblImagen.Size = new System.Drawing.Size(42, 13);
             this.lblImagen.TabIndex = 14;
@@ -124,16 +129,18 @@
             // 
             // boxImage
             // 
-            this.boxImage.Location = new System.Drawing.Point(467, 44);
+            this.boxImage.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.boxImage.Location = new System.Drawing.Point(467, 13);
             this.boxImage.Name = "boxImage";
             this.boxImage.Size = new System.Drawing.Size(282, 20);
             this.boxImage.TabIndex = 15;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(173, 374);
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Location = new System.Drawing.Point(168, 328);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(153, 45);
+            this.btnAgregar.Size = new System.Drawing.Size(209, 85);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -141,24 +148,14 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(467, 374);
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Location = new System.Drawing.Point(454, 328);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(153, 45);
+            this.btnCancelar.Size = new System.Drawing.Size(209, 85);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(422, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(327, 279);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
             // 
             // cboCat
             // 
@@ -178,14 +175,43 @@
             this.cboMarca.Size = new System.Drawing.Size(130, 21);
             this.cboMarca.TabIndex = 20;
             // 
+            // lblCod
+            // 
+            this.lblCod.AutoSize = true;
+            this.lblCod.Location = new System.Drawing.Point(42, 13);
+            this.lblCod.Name = "lblCod";
+            this.lblCod.Size = new System.Drawing.Size(40, 13);
+            this.lblCod.TabIndex = 21;
+            this.lblCod.Text = "Código";
+            // 
+            // boxCod
+            // 
+            this.boxCod.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.boxCod.Location = new System.Drawing.Point(108, 13);
+            this.boxCod.Name = "boxCod";
+            this.boxCod.Size = new System.Drawing.Size(282, 20);
+            this.boxCod.TabIndex = 22;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(422, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(327, 243);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.boxCod);
+            this.Controls.Add(this.lblCod);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.cboCat);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.boxImage);
@@ -219,10 +245,12 @@
         private System.Windows.Forms.TextBox boxPrecio;
         private System.Windows.Forms.Label lblImagen;
         private System.Windows.Forms.TextBox boxImage;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cboCat;
         private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.Label lblCod;
+        private System.Windows.Forms.TextBox boxCod;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

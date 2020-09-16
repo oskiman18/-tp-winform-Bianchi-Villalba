@@ -27,26 +27,7 @@ namespace TP_Winforms_Pro_3
         }
 
         public DataTable CargarCbox()
-        {
-          /*  string directorio = "server=.\\SQLEXPRESS; database=CATALOGO_DB; Integrated Security=True";
-            SqlConnection conexion = new SqlConnection(directorio);
-            SqlCommand comando = new SqlCommand("Select * from Marcas", conexion);
-            SqlDataReader lector;
-            List<Marcas> lista = new List<Marcas>();
-
-            conexion.ConnectionString = directorio;
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.Connection = conexion;
-
-            conexion.Open();
-            lector = comando.ExecuteReader();
-            while (lector.Read())
-            {
-                lista.Add(new Marcas((int)lector["Id"], (string)lector["Descripcion"]));
-            }
-            lector.Close();
-            return lista;*/
-            
+        {   
             string query = "select Id, Descripcion from MARCAS";
             ConexionSQL conexion = new ConexionSQL();
             conexion.Abir();
@@ -56,8 +37,7 @@ namespace TP_Winforms_Pro_3
             adaptador.Fill(tabla);
             conexion.Cerrar();
 
-            return tabla;   
-
+            return tabla;
         }
 
     }
