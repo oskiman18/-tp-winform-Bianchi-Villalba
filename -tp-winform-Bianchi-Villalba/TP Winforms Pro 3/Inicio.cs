@@ -87,14 +87,22 @@ namespace TP_Winforms_Pro_3
             ventana.ShowDialog();
         }
 
+        bool listar = false;
         private void btnListar_Click(object sender, EventArgs e)
         {
+            
             ConexionSQL conexion = new ConexionSQL();
             DataTable tabla = conexion.ListarTodo();
 
+            if (!listar)
+            {
+                listar = true;
+                btnListar.Text = "Actualizar lista";
+            }
+
             try
             {
-                //dgvArticulo.DataSource = tabla;
+                dgbArticulo.DataSource = tabla;
             }
             catch (Exception)
             {
@@ -125,6 +133,25 @@ namespace TP_Winforms_Pro_3
             {
                 conexion.Cerrar();
             }
+        }
+
+        private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
+        {
+            /*
+            string imagenLink = ObtenerURL();
+            pbArticulo.Load(imagenLink);
+            */
+        }
+        public void ObtenerURL()
+        {
+            /*
+            string url;
+            string query = "select ImagenURL from ARTICULOS";
+            ConexionSQL conexion = new ConexionSQL();
+            SqlCommand comando = new SqlCommand(query, conexion.directorio);
+            url = Convert.ToString(comando.ExecuteScalar());
+            return url;
+            */
         }
     }
 }

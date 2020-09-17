@@ -17,22 +17,11 @@ namespace TP_Winforms_Pro_3
         public Agregar()
         {
             InitializeComponent();
-            CargarCboCat();
-            CargarCboMarca();
-        }
-
-        public void CargarCboCat()
-        { 
             
         }
-
-        public void CargarCboMarca()
-        {
-       
-        }
-
         private void Agregar_Load(object sender, EventArgs e)
         {
+            
             Marcas aux = new Marcas();
             cboMarca.ValueMember = "Id";
             cboMarca.DisplayMember = "Descripcion";
@@ -41,6 +30,7 @@ namespace TP_Winforms_Pro_3
             cboCat.ValueMember = "Id";
             cboCat.DisplayMember = "Descripcion";
             cboCat.DataSource = aux1.CargarCbox();
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

@@ -12,6 +12,7 @@ namespace TP_Winforms_Pro_3
     {
         public int id { get; set; }
         public String nombre { get; set; }
+        public string imagenURL { get; set; }
 
         public Marcas(int ID, string desc)
         {
