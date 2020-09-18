@@ -21,7 +21,7 @@ namespace TP_Winforms_Pro_3
 
         private void Modificar_Load(object sender, EventArgs e)
         {
-            codArt.Text = reg.Codigo.ToString();
+            codArt.Text = reg.Codigo;
             nomArt.Text = reg.Nombre;
             catArt.Text = reg.Categoria;
             marcArt.Text = reg.Marca;
@@ -44,7 +44,7 @@ namespace TP_Winforms_Pro_3
         private void clickConfirmar(object sender, MouseEventArgs e)
         {
 
-            if (!checkBox1.Checked) reg.Codigo = int.Parse(newCod.Text);
+            if (!checkBox1.Checked) reg.Codigo = newCod.Text;
             if (!checkBox2.Checked) reg.Nombre = newNombre.Text;
             if (!checkBox3.Checked) reg.Categoria = newCat.SelectedItem.ToString();
             if (!checkBox4.Checked) reg.Marca = newMarca.SelectedItem.ToString();
@@ -53,7 +53,16 @@ namespace TP_Winforms_Pro_3
             this.Close();
         }
 
-
+        public void CargarArticulo (Articulo aux)
+        {
+            reg.Categoria = aux.Categoria;
+            reg.Codigo = aux.Codigo;
+            reg.Descripcion = aux.Descripcion;
+            reg.Imagen = aux.Imagen;
+            reg.Marca = aux.Marca;
+            reg.Nombre = aux.Nombre;
+            reg.Precio = aux.Precio;
+        }
 
     }
 }

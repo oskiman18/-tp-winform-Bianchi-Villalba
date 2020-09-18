@@ -12,6 +12,8 @@ namespace TP_Winforms_Pro_3
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
+
+
         static void Main()
         {
             

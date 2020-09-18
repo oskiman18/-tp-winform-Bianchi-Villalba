@@ -1,9 +1,9 @@
 ﻿using System;
 namespace TP_Winforms_Pro_3
 {
-    class Articulo
+    public class Articulo
     {
-        private int codArt;
+        private string codArt;
         private string nombre;
         private string descripcion;
         private string IDMarca;
@@ -17,7 +17,7 @@ namespace TP_Winforms_Pro_3
             get { return nombre; }
             set { nombre = value; }
         }
-        public int Codigo
+        public string Codigo
         {
             get { return codArt; }
             set { codArt = value; }
@@ -54,7 +54,7 @@ namespace TP_Winforms_Pro_3
             
         }
 
-        public void CargarArticulo(int codArt, string nombre, string descripcion, string marca,
+        public void CargarArticulo(string codArt, string nombre, string descripcion, string marca,
                                    string categoria, string imagenLink, float precio)
         {
             this.codArt = codArt;

@@ -145,7 +145,7 @@
             // textEstado
             // 
             this.textEstado.AutoSize = true;
-            this.textEstado.Location = new System.Drawing.Point(76, 9);
+            this.textEstado.Location = new System.Drawing.Point(76, 6);
             this.textEstado.Name = "textEstado";
             this.textEstado.Size = new System.Drawing.Size(70, 13);
             this.textEstado.TabIndex = 8;

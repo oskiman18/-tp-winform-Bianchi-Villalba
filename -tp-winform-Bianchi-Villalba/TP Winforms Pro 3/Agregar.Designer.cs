@@ -51,7 +51,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(39, 47);
+            this.lblNombre.Location = new System.Drawing.Point(39, 60);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 1;
@@ -69,7 +69,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(39, 137);
+            this.lblMarca.Location = new System.Drawing.Point(39, 145);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 3;
@@ -78,7 +78,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(39, 92);
+            this.lblCategoria.Location = new System.Drawing.Point(39, 101);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(54, 13);
             this.lblCategoria.TabIndex = 4;
@@ -105,7 +105,7 @@
             // boxNombre
             // 
             this.boxNombre.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.boxNombre.Location = new System.Drawing.Point(108, 44);
+            this.boxNombre.Location = new System.Drawing.Point(108, 53);
             this.boxNombre.Name = "boxNombre";
             this.boxNombre.Size = new System.Drawing.Size(282, 20);
             this.boxNombre.TabIndex = 8;
@@ -149,6 +149,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(454, 328);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(209, 85);
@@ -161,7 +162,7 @@
             // 
             this.cboCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCat.FormattingEnabled = true;
-            this.cboCat.Location = new System.Drawing.Point(108, 92);
+            this.cboCat.Location = new System.Drawing.Point(108, 101);
             this.cboCat.Name = "cboCat";
             this.cboCat.Size = new System.Drawing.Size(130, 21);
             this.cboCat.TabIndex = 19;
@@ -170,7 +171,7 @@
             // 
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(108, 128);
+            this.cboMarca.Location = new System.Drawing.Point(108, 137);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(130, 21);
             this.cboMarca.TabIndex = 20;

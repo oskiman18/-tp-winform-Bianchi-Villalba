@@ -475,5 +475,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label urlImagen;
         private System.Windows.Forms.Label label4;
+
     }
 }

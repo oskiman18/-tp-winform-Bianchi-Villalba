@@ -113,7 +113,8 @@ namespace TP_Winforms_Pro_3
 
         private void clickModificar(object sender, MouseEventArgs e)
         {
-            Modificar ventana = new Modificar();
+            //  Modificar ventana = new Modificar();
+            Busqueda ventana = new Busqueda();
             ventana.ShowDialog();
         }
 

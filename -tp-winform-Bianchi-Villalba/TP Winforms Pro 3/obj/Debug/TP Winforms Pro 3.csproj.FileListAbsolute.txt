@@ -22,3 +22,4 @@ C:\Users\Oscar\Desktop\Facultad\Github\Nueva carpeta\SQL_Act 2.1\-tp-winform-Bia
 C:\Users\Oscar\Desktop\Facultad\Github\Nueva carpeta\SQL_Act 2.1\-tp-winform-Bianchi-Villalba\-tp-winform-Bianchi-Villalba\TP Winforms Pro 3\obj\Debug\TP_Winforms_Pro_3.Inicio.resources
 C:\Users\Hernan\Documents\Programación III\-tp-winform-Bianchi-Villalba\-tp-winform-Bianchi-Villalba\TP Winforms Pro 3\obj\Debug\TP_Winforms_Pro_3.Inicio.resources
 C:\Users\Hernan\Documents\Programación III\-tp-winform-Bianchi-Villalba\-tp-winform-Bianchi-Villalba\TP Winforms Pro 3\obj\Debug\TP_Winforms_Pro_3.Modificar.resources
+C:\Users\Oscar\Desktop\Facultad\Github\Nueva carpeta\SQL_Act 2.1\-tp-winform-Bianchi-Villalba\-tp-winform-Bianchi-Villalba\TP Winforms Pro 3\obj\Debug\TP_Winforms_Pro_3.Busqueda.resources
