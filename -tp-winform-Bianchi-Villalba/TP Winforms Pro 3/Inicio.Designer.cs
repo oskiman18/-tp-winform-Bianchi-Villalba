@@ -165,7 +165,7 @@
             this.Descripcion.AutoSize = true;
             this.Descripcion.BackColor = System.Drawing.Color.Black;
             this.Descripcion.ForeColor = System.Drawing.SystemColors.Control;
-            this.Descripcion.Location = new System.Drawing.Point(532, 13);
+            this.Descripcion.Location = new System.Drawing.Point(532, 9);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Size = new System.Drawing.Size(84, 13);
             this.Descripcion.TabIndex = 7;

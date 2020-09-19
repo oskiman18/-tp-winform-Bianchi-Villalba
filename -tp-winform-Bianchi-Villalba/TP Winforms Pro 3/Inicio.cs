@@ -93,7 +93,7 @@ namespace TP_Winforms_Pro_3
         private void btnListar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-
+           // ConexionSQL aux = new ConexionSQL();
             if (!listar)
             {
                 listar = true;
@@ -102,7 +102,9 @@ namespace TP_Winforms_Pro_3
 
             try
             {
-                dgbArticulo.DataSource = negocio.listar();
+
+                 dgbArticulo.DataSource = negocio.listar();
+               // dgbArticulo.DataSource = aux.ListarTodo();
                 dgbArticulo.Columns[6].Visible = false;
             }
             catch (Exception)
@@ -114,8 +116,7 @@ namespace TP_Winforms_Pro_3
 
         private void clickModificar(object sender, MouseEventArgs e)
         {
-            //  Modificar ventana = new Modificar();
-            Busqueda ventana = new Busqueda();
+            Modificar ventana = new Modificar();
             ventana.ShowDialog();
         }
 
@@ -126,6 +127,7 @@ namespace TP_Winforms_Pro_3
             {
                 conexion.Abir();
                 textEstado.Text = "Conectado";
+
             }
             catch (Exception)
             {
@@ -141,8 +143,8 @@ namespace TP_Winforms_Pro_3
         {
             try
             {
-                Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
-                pbArticulo.Load(art.Imagen);
+             Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
+              pbArticulo.Load(art.Imagen);
             }
             catch (Exception)
             {
