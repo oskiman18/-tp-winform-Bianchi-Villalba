@@ -41,8 +41,8 @@
             this.precArt = new System.Windows.Forms.Label();
             this.descArt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.newMarca = new System.Windows.Forms.ComboBox();
-            this.newCat = new System.Windows.Forms.ComboBox();
+            this.newIdMarca = new System.Windows.Forms.ComboBox();
+            this.newIdCat = new System.Windows.Forms.ComboBox();
             this.newPrecio = new System.Windows.Forms.TextBox();
             this.newNombre = new System.Windows.Forms.TextBox();
             this.newCod = new System.Windows.Forms.TextBox();
@@ -193,19 +193,19 @@
             // 
             // newMarca
             // 
-            this.newMarca.FormattingEnabled = true;
-            this.newMarca.Location = new System.Drawing.Point(268, 178);
-            this.newMarca.Name = "newMarca";
-            this.newMarca.Size = new System.Drawing.Size(282, 21);
-            this.newMarca.TabIndex = 24;
+            this.newIdMarca.FormattingEnabled = true;
+            this.newIdMarca.Location = new System.Drawing.Point(268, 178);
+            this.newIdMarca.Name = "newMarca";
+            this.newIdMarca.Size = new System.Drawing.Size(282, 21);
+            this.newIdMarca.TabIndex = 24;
             // 
             // newCat
             // 
-            this.newCat.FormattingEnabled = true;
-            this.newCat.Location = new System.Drawing.Point(268, 133);
-            this.newCat.Name = "newCat";
-            this.newCat.Size = new System.Drawing.Size(282, 21);
-            this.newCat.TabIndex = 23;
+            this.newIdCat.FormattingEnabled = true;
+            this.newIdCat.Location = new System.Drawing.Point(268, 133);
+            this.newIdCat.Name = "newCat";
+            this.newIdCat.Size = new System.Drawing.Size(282, 21);
+            this.newIdCat.TabIndex = 23;
             // 
             // newPrecio
             // 
@@ -409,8 +409,8 @@
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.newMarca);
-            this.Controls.Add(this.newCat);
+            this.Controls.Add(this.newIdMarca);
+            this.Controls.Add(this.newIdCat);
             this.Controls.Add(this.newPrecio);
             this.Controls.Add(this.newNombre);
             this.Controls.Add(this.newCod);
@@ -453,8 +453,8 @@
         private System.Windows.Forms.Label precArt;
         private System.Windows.Forms.Label descArt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox newMarca;
-        private System.Windows.Forms.ComboBox newCat;
+        private System.Windows.Forms.ComboBox newIdMarca;
+        private System.Windows.Forms.ComboBox newIdCat;
         private System.Windows.Forms.TextBox newPrecio;
         private System.Windows.Forms.TextBox newNombre;
         private System.Windows.Forms.TextBox newCod;

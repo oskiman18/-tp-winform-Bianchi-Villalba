@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TP_Winforms_Pro_3
@@ -90,9 +92,7 @@ namespace TP_Winforms_Pro_3
         bool listar = false;
         private void btnListar_Click(object sender, EventArgs e)
         {
-            
-            ConexionSQL conexion = new ConexionSQL();
-            DataTable tabla = conexion.ListarTodo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
 
             if (!listar)
             {
@@ -102,13 +102,14 @@ namespace TP_Winforms_Pro_3
 
             try
             {
-                dgbArticulo.DataSource = tabla;
+                dgbArticulo.DataSource = negocio.listar();
+                dgbArticulo.Columns[6].Visible = false;
             }
             catch (Exception)
             {
                 MessageBox.Show("No se pudo abir la conexion para listar");
             }
-
+            
         }
 
         private void clickModificar(object sender, MouseEventArgs e)
@@ -138,10 +139,15 @@ namespace TP_Winforms_Pro_3
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
-            /*
-            string imagenLink = ObtenerURL();
-            pbArticulo.Load(imagenLink);
-            */
+            try
+            {
+                Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
+                pbArticulo.Load(art.Imagen);
+            }
+            catch (Exception)
+            {
+                
+            }
         }
         public void ObtenerURL()
         {
@@ -153,6 +159,31 @@ namespace TP_Winforms_Pro_3
             url = Convert.ToString(comando.ExecuteScalar());
             return url;
             */
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBusqueda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace TP_Winforms_Pro_3
 {
-    class ConexionSQL
+    public class ConexionSQL
     {
         public SqlConnection directorio;
 
@@ -37,6 +37,12 @@ namespace TP_Winforms_Pro_3
             adaptador.Fill(tabla);
             conexion.Cerrar();
             return tabla;
+        }
+
+        public void EjecutarQuery(string query)
+        {
+            this.Abir();
+            SqlCommand comando = new SqlCommand(query, this.directorio);
         }
 
         public DataTable ListarBusqueda()

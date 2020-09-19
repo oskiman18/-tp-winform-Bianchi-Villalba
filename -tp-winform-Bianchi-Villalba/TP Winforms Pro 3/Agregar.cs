@@ -48,15 +48,26 @@ namespace TP_Winforms_Pro_3
         public void Insert()
         {
             ConexionSQL conexion = new ConexionSQL();
-            string query = "INSERT INTO ARTICULOS (Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio) VALUES (@Nombre,@Descripcion,@IdMarca,@IdCategoria,@ImagenUrl,@Precio)";
+            string query = "INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@ImagenUrl,@Precio)";
             conexion.Abir();
             SqlCommand comando = new SqlCommand(query, conexion.directorio);
+            /*
+            comando.Parameters.AddWithValue("@Codigo", art.Codigo);
+            comando.Parameters.AddWithValue("@Nombre", art.Nombre);
+            comando.Parameters.AddWithValue("@Descripcion", art.Descripcion);
+            comando.Parameters.AddWithValue("@IdMarca", art.IdMarca);
+            comando.Parameters.AddWithValue("@IdCategoria", art.IdCategoria);
+            comando.Parameters.AddWithValue("@ImagenUrl", art.Imagen);
+            comando.Parameters.AddWithValue("@Precio", art.Precio);
+            */
+            comando.Parameters.AddWithValue("@Codigo", boxCod.Text);
             comando.Parameters.AddWithValue("@Nombre", boxNombre.Text);
-            comando.Parameters.AddWithValue("@Descripcion", boxPrecio.Text);
+            comando.Parameters.AddWithValue("@Descripcion", boxDesc.Text);
             comando.Parameters.AddWithValue("@IdMarca", Convert.ToInt32(cboMarca.SelectedValue));
             comando.Parameters.AddWithValue("@IdCategoria", Convert.ToInt32(cboCat.SelectedValue));
             comando.Parameters.AddWithValue("@ImagenUrl", boxImage.Text);
             comando.Parameters.AddWithValue("@Precio", boxPrecio.Text);
+            
             comando.ExecuteNonQuery();
             
 
