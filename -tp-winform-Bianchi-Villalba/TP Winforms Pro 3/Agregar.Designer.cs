@@ -138,9 +138,9 @@
             // btnAgregar
             // 
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.Location = new System.Drawing.Point(168, 328);
+            this.btnAgregar.Location = new System.Drawing.Point(167, 308);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(209, 85);
+            this.btnAgregar.Size = new System.Drawing.Size(209, 28);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -150,9 +150,9 @@
             // 
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(454, 328);
+            this.btnCancelar.Location = new System.Drawing.Point(444, 308);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(209, 85);
+            this.btnCancelar.Size = new System.Drawing.Size(209, 28);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@
             this.cboCat.FormattingEnabled = true;
             this.cboCat.Location = new System.Drawing.Point(108, 101);
             this.cboCat.Name = "cboCat";
-            this.cboCat.Size = new System.Drawing.Size(130, 21);
+            this.cboCat.Size = new System.Drawing.Size(282, 21);
             this.cboCat.TabIndex = 19;
             // 
             // cboMarca
@@ -173,7 +173,7 @@
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(108, 137);
             this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(130, 21);
+            this.cboMarca.Size = new System.Drawing.Size(282, 21);
             this.cboMarca.TabIndex = 20;
             // 
             // lblCod
@@ -198,6 +198,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(422, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(327, 243);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
@@ -207,7 +208,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(771, 351);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.boxCod);
             this.Controls.Add(this.lblCod);
