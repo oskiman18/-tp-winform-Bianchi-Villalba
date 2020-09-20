@@ -10,7 +10,7 @@ namespace TP_Winforms_Pro_3
 {
     public partial class Inicio : Form
     {
-
+        private List<Articulo> lOriginal;
         public Inicio()
         {
             InitializeComponent();
@@ -90,23 +90,19 @@ namespace TP_Winforms_Pro_3
             ventana.ShowDialog();
         }
 
-        bool listar = false;
         private void btnListar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-           // ConexionSQL aux = new ConexionSQL();
-            if (!listar)
-            {
-                listar = true;
-                btnListar.Text = "Actualizar lista";
-            }
-
+        
             try
             {
                 //string query = "select * from ARTICULOS";
                 string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.ImagenUrl, A.Precio from ARTICULOS as A";
                 //string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, A.ImagenUrl, A.Precio from ARTICULOS as A join MARCAS as M on M.Id=A.IdMarca join CATEGORIAS as C on C.Id=A.IdCategoria";
-                dgbArticulo.DataSource = negocio.listar(query);
+                lOriginal = negocio.listar(query);
+
+                dgbArticulo.DataSource = lOriginal;
+
                 dgbArticulo.Columns[6].Visible = false;
                 dgbArticulo.Columns[7].Visible = false;
                 dgbArticulo.Columns[8].Visible = false;
@@ -120,17 +116,27 @@ namespace TP_Winforms_Pro_3
 
         private void clickModificar(object sender, MouseEventArgs e)
         {
-            Modificar ventana = new Modificar();
-            ventana.ShowDialog();
+            Articulo reg = null;
+
+                reg = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
+
+                if (reg != null)
+                {
+                    Modificar ventana = new Modificar(reg);
+                    ventana.ShowDialog();
+                }
+            
         }
 
         private void Inicio_Load(object sender, EventArgs e)
         {
             ConexionSQL conexion = new ConexionSQL();
+            ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
                 conexion.Abir();
-                textEstado.Text = "Conectado";
+                textEstado.Text = "Conectado"; 
+        
 
             }
             catch (Exception)
@@ -164,8 +170,9 @@ namespace TP_Winforms_Pro_3
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
-        {
-
+        {      
+            List<Articulo> lfiltro = lOriginal.FindAll(reg => reg.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) );
+            dgbArticulo.DataSource = lfiltro;       
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

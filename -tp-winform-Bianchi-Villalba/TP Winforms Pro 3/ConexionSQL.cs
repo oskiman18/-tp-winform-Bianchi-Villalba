@@ -58,32 +58,6 @@ namespace TP_Winforms_Pro_3
             return tabla;
         }
 
-        public void CargarBusqueda(int criterio, string pclave)
-        {
-            string query = "select * from Articulos where id = 1";
-            ConexionSQL conexion = new ConexionSQL();
-  
-            SqlCommand comando = new SqlCommand(query, conexion.directorio);
-            SqlDataReader reader;         
-            conexion.Abir();
-            reader = comando.ExecuteReader();
-            try
-            {
-                
-
-                while (reader.Read())
-                {
-                    //producto.Codigo = (string)reader["codigo"];
-                    //producto.Nombre = (string)reader["nombre"];
-                    //producto.Descripcion = (string)reader["descripcion"];
-
-                }
-                comando.ExecuteNonQuery();
-            }
-            catch {
-                MessageBox.Show("gil");
-            }
-        }
 
     }
 }

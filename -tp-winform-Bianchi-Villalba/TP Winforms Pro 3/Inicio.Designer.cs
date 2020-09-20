@@ -39,7 +39,7 @@
             this.textEstado = new System.Windows.Forms.Label();
             this.pbArticulo = new System.Windows.Forms.PictureBox();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgbArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +137,7 @@
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(250, 50);
             this.btnListar.TabIndex = 5;
-            this.btnListar.Text = "Listar";
+            this.btnListar.Text = "Listar Todo";
             this.btnListar.UseVisualStyleBackColor = false;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             this.btnListar.MouseLeave += new System.EventHandler(this.btnListar_MouseLeave);
@@ -207,12 +207,12 @@
             this.lblEstado.TabIndex = 10;
             this.lblEstado.Text = "EstadoBD:";
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(220, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(306, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtBuscar.Location = new System.Drawing.Point(220, 6);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(306, 20);
+            this.txtBuscar.TabIndex = 11;
             // 
             // Inicio
             // 
@@ -220,8 +220,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TP_Winforms_Pro_3.Properties.Resources.fondo_negro_en_nuevayork;
             this.ClientSize = new System.Drawing.Size(1072, 444);
+
             this.Controls.Add(this.dgbArticulo);
-            this.Controls.Add(this.textBox1);
+
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.textEstado);
@@ -258,7 +260,7 @@
         private System.Windows.Forms.PictureBox pbArticulo;
         private System.Windows.Forms.Label lblEstado;
         public System.Windows.Forms.DataGridView dgbArticulo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
 

@@ -50,16 +50,7 @@ namespace TP_Winforms_Pro_3
             ConexionSQL conexion = new ConexionSQL();
             string query = "INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@ImagenUrl,@Precio)";
             conexion.Abir();
-            SqlCommand comando = new SqlCommand(query, conexion.directorio);
-            /*
-            comando.Parameters.AddWithValue("@Codigo", art.Codigo);
-            comando.Parameters.AddWithValue("@Nombre", art.Nombre);
-            comando.Parameters.AddWithValue("@Descripcion", art.Descripcion);
-            comando.Parameters.AddWithValue("@IdMarca", art.IdMarca);
-            comando.Parameters.AddWithValue("@IdCategoria", art.IdCategoria);
-            comando.Parameters.AddWithValue("@ImagenUrl", art.Imagen);
-            comando.Parameters.AddWithValue("@Precio", art.Precio);
-            */
+            SqlCommand comando = new SqlCommand(query, conexion.directorio);        
             comando.Parameters.AddWithValue("@Codigo", boxCod.Text);
             comando.Parameters.AddWithValue("@Nombre", boxNombre.Text);
             comando.Parameters.AddWithValue("@Descripcion", boxDesc.Text);
@@ -74,10 +65,12 @@ namespace TP_Winforms_Pro_3
             try
             {
                 MessageBox.Show("¡Insertado a la BD!");
+                Close();
             }
             catch (Exception)
             {
                 MessageBox.Show("No se pudo insertar el articulo");
+                Close();
             }
         }
         private void btnCancelar_Click(object sender, EventArgs e)

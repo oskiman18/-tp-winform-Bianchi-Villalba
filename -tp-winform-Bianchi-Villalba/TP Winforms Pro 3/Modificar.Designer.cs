@@ -55,7 +55,7 @@
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.imagArt = new System.Windows.Forms.PictureBox();
-            this.newImag = new System.Windows.Forms.PictureBox();
+            this.newPicture = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
@@ -64,7 +64,7 @@
             this.urlImagen = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imagArt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newImag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -125,7 +125,7 @@
             // 
             this.codArt.AutoSize = true;
             this.codArt.Location = new System.Drawing.Point(84, 47);
-            this.codArt.MaximumSize = new System.Drawing.Size(200, 0);
+            this.codArt.MaximumSize = new System.Drawing.Size(180, 0);
             this.codArt.Name = "codArt";
             this.codArt.Size = new System.Drawing.Size(35, 13);
             this.codArt.TabIndex = 12;
@@ -135,7 +135,7 @@
             // 
             this.nomArt.AutoSize = true;
             this.nomArt.Location = new System.Drawing.Point(84, 92);
-            this.nomArt.MaximumSize = new System.Drawing.Size(200, 0);
+            this.nomArt.MaximumSize = new System.Drawing.Size(180, 0);
             this.nomArt.Name = "nomArt";
             this.nomArt.Size = new System.Drawing.Size(35, 13);
             this.nomArt.TabIndex = 13;
@@ -145,7 +145,7 @@
             // 
             this.catArt.AutoSize = true;
             this.catArt.Location = new System.Drawing.Point(84, 137);
-            this.catArt.MaximumSize = new System.Drawing.Size(200, 0);
+            this.catArt.MaximumSize = new System.Drawing.Size(180, 0);
             this.catArt.Name = "catArt";
             this.catArt.Size = new System.Drawing.Size(35, 13);
             this.catArt.TabIndex = 14;
@@ -155,7 +155,7 @@
             // 
             this.marcArt.AutoSize = true;
             this.marcArt.Location = new System.Drawing.Point(84, 182);
-            this.marcArt.MaximumSize = new System.Drawing.Size(200, 0);
+            this.marcArt.MaximumSize = new System.Drawing.Size(180, 0);
             this.marcArt.Name = "marcArt";
             this.marcArt.Size = new System.Drawing.Size(35, 13);
             this.marcArt.TabIndex = 15;
@@ -165,7 +165,7 @@
             // 
             this.precArt.AutoSize = true;
             this.precArt.Location = new System.Drawing.Point(84, 227);
-            this.precArt.MaximumSize = new System.Drawing.Size(200, 0);
+            this.precArt.MaximumSize = new System.Drawing.Size(180, 0);
             this.precArt.Name = "precArt";
             this.precArt.Size = new System.Drawing.Size(35, 13);
             this.precArt.TabIndex = 16;
@@ -175,7 +175,7 @@
             // 
             this.descArt.AutoSize = true;
             this.descArt.Location = new System.Drawing.Point(84, 272);
-            this.descArt.MaximumSize = new System.Drawing.Size(200, 0);
+            this.descArt.MaximumSize = new System.Drawing.Size(180, 0);
             this.descArt.Name = "descArt";
             this.descArt.Size = new System.Drawing.Size(35, 13);
             this.descArt.TabIndex = 17;
@@ -191,19 +191,21 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Datos Actuales";
             // 
-            // newMarca
+            // newIdMarca
             // 
+            this.newIdMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.newIdMarca.FormattingEnabled = true;
             this.newIdMarca.Location = new System.Drawing.Point(268, 178);
-            this.newIdMarca.Name = "newMarca";
+            this.newIdMarca.Name = "newIdMarca";
             this.newIdMarca.Size = new System.Drawing.Size(282, 21);
             this.newIdMarca.TabIndex = 24;
             // 
-            // newCat
+            // newIdCat
             // 
+            this.newIdCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.newIdCat.FormattingEnabled = true;
             this.newIdCat.Location = new System.Drawing.Point(268, 133);
-            this.newIdCat.Name = "newCat";
+            this.newIdCat.Name = "newIdCat";
             this.newIdCat.Size = new System.Drawing.Size(282, 21);
             this.newIdCat.TabIndex = 23;
             // 
@@ -213,6 +215,7 @@
             this.newPrecio.Name = "newPrecio";
             this.newPrecio.Size = new System.Drawing.Size(282, 20);
             this.newPrecio.TabIndex = 22;
+            this.newPrecio.Text = "0";
             // 
             // newNombre
             // 
@@ -238,7 +241,7 @@
             // 
             // newImagen
             // 
-            this.newImagen.Location = new System.Drawing.Point(268, 587);
+            this.newImagen.Location = new System.Drawing.Point(268, 423);
             this.newImagen.Name = "newImagen";
             this.newImagen.Size = new System.Drawing.Size(282, 20);
             this.newImagen.TabIndex = 38;
@@ -305,26 +308,26 @@
             // 
             // imagArt
             // 
-            this.imagArt.Location = new System.Drawing.Point(84, 425);
+            this.imagArt.Location = new System.Drawing.Point(87, 486);
             this.imagArt.Name = "imagArt";
             this.imagArt.Size = new System.Drawing.Size(178, 156);
             this.imagArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imagArt.TabIndex = 31;
             this.imagArt.TabStop = false;
             // 
-            // newImag
+            // newPicture
             // 
-            this.newImag.Location = new System.Drawing.Point(268, 425);
-            this.newImag.Name = "newImag";
-            this.newImag.Size = new System.Drawing.Size(178, 156);
-            this.newImag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.newImag.TabIndex = 32;
-            this.newImag.TabStop = false;
+            this.newPicture.Location = new System.Drawing.Point(268, 486);
+            this.newPicture.Name = "newPicture";
+            this.newPicture.Size = new System.Drawing.Size(178, 156);
+            this.newPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.newPicture.TabIndex = 32;
+            this.newPicture.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 425);
+            this.label2.Location = new System.Drawing.Point(10, 486);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 33;
@@ -352,27 +355,29 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(418, 629);
+            this.btnConfirmar.Location = new System.Drawing.Point(609, 590);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(155, 33);
             this.btnConfirmar.TabIndex = 36;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clickConfirmar);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(579, 629);
+            this.btnCancelar.Location = new System.Drawing.Point(609, 629);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(155, 33);
             this.btnCancelar.TabIndex = 37;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // urlImagen
             // 
             this.urlImagen.AutoSize = true;
-            this.urlImagen.Location = new System.Drawing.Point(81, 590);
-            this.urlImagen.MaximumSize = new System.Drawing.Size(200, 0);
+            this.urlImagen.Location = new System.Drawing.Point(84, 426);
+            this.urlImagen.MaximumSize = new System.Drawing.Size(180, 0);
             this.urlImagen.Name = "urlImagen";
             this.urlImagen.Size = new System.Drawing.Size(35, 13);
             this.urlImagen.TabIndex = 39;
@@ -381,7 +386,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 590);
+            this.label4.Location = new System.Drawing.Point(12, 426);
             this.label4.MaximumSize = new System.Drawing.Size(200, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
@@ -400,7 +405,7 @@
             this.Controls.Add(this.checkBox7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.newImag);
+            this.Controls.Add(this.newPicture);
             this.Controls.Add(this.imagArt);
             this.Controls.Add(this.newImagen);
             this.Controls.Add(this.checkBox6);
@@ -430,10 +435,10 @@
             this.Controls.Add(this.label12);
             this.Name = "Modificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modificar";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Modificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imagArt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newImag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,7 +472,7 @@
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.PictureBox imagArt;
-        private System.Windows.Forms.PictureBox newImag;
+        private System.Windows.Forms.PictureBox newPicture;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox7;
