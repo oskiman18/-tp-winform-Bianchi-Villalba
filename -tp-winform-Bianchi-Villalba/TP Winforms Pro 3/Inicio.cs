@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace TP_Winforms_Pro_3
@@ -102,10 +103,13 @@ namespace TP_Winforms_Pro_3
 
             try
             {
-
-                 dgbArticulo.DataSource = negocio.listar();
-               // dgbArticulo.DataSource = aux.ListarTodo();
+                //string query = "select * from ARTICULOS";
+                string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.ImagenUrl, A.Precio from ARTICULOS as A";
+                //string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, A.ImagenUrl, A.Precio from ARTICULOS as A join MARCAS as M on M.Id=A.IdMarca join CATEGORIAS as C on C.Id=A.IdCategoria";
+                dgbArticulo.DataSource = negocio.listar(query);
                 dgbArticulo.Columns[6].Visible = false;
+                dgbArticulo.Columns[7].Visible = false;
+                dgbArticulo.Columns[8].Visible = false;
             }
             catch (Exception)
             {
@@ -141,31 +145,22 @@ namespace TP_Winforms_Pro_3
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
+            //listar todo en el inicio
             try
             {
-             Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
-              pbArticulo.Load(art.Imagen);
+                Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
+                pbArticulo.Load(art.Imagen);
             }
             catch (Exception)
             {
                 
             }
         }
-        public void ObtenerURL()
-        {
-            /*
-            string url;
-            string query = "select ImagenURL from ARTICULOS";
-            ConexionSQL conexion = new ConexionSQL();
-            SqlCommand comando = new SqlCommand(query, conexion.directorio);
-            url = Convert.ToString(comando.ExecuteScalar());
-            return url;
-            */
-        }
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-
+            Detalle ventana = new Detalle();
+            ventana.ShowDialog();
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)

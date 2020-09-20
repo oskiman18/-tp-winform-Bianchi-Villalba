@@ -8,6 +8,8 @@
         public string Descripcion { get; set; }
         public int IdMarca { get; set; }
         public int IdCategoria { get; set; }
+        public string Marca { get; set; }
+        public string Categoria { get; set; }
         public string Imagen { get; set; }
         public System.Data.SqlTypes.SqlMoney Precio { get; set; }
 
@@ -17,6 +19,7 @@
 
         }
     }
+
 }
 
 

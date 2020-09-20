@@ -26,9 +26,9 @@ namespace TP_Winforms_Pro_3
         {
             directorio.Close();
         }
-        public DataTable ListarTodo()
+        public DataTable ListarTodo(string query)
         {
-            string query = "select A.Id, A.Codigo,A.Nombre, C.Descripcion as Categoria, M.Descripcion as Marca,A.ImagenUrl as Imagen,A.Precio from ARTICULOS as A left join CATEGORIAS as C on C.Id=A.IdCategoria left join MARCAS as M on M.Id = A.IdMarca";
+            //string query = "select A.Id, A.Codigo,A.Nombre, C.Descripcion as Categoria, M.Descripcion as Marca,A.ImagenUrl as Imagen,A.Precio from ARTICULOS as A left join CATEGORIAS as C on C.Id=A.IdCategoria left join MARCAS as M on M.Id = A.IdMarca";
             ConexionSQL conexion = new ConexionSQL();
             SqlCommand comando = new SqlCommand(query, conexion.directorio);
             SqlDataAdapter adaptador = new SqlDataAdapter();

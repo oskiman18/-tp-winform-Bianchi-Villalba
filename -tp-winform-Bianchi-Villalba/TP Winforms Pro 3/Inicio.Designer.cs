@@ -220,6 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TP_Winforms_Pro_3.Properties.Resources.fondo_negro_en_nuevayork;
             this.ClientSize = new System.Drawing.Size(1072, 444);
+            this.Controls.Add(this.dgbArticulo);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.pbArticulo);
@@ -231,7 +232,6 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgbArticulo);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1088, 483);
             this.MinimumSize = new System.Drawing.Size(1088, 483);
@@ -252,7 +252,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnDetalle;
+        public System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label Descripcion;
         private System.Windows.Forms.Label textEstado;
         private System.Windows.Forms.PictureBox pbArticulo;
