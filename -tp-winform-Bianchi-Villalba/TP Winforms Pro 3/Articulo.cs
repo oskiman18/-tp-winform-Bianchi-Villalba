@@ -10,7 +10,7 @@
         public int IdCategoria { get; set; }
         public string Marca { get; set; }
         public string Categoria { get; set; }
-        public string Imagen { get; set; }
+        public string ImagenUrl { get; set; }
         public System.Data.SqlTypes.SqlMoney Precio { get; set; }
 
         //Constructor

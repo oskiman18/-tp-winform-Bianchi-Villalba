@@ -30,9 +30,9 @@ namespace TP_Winforms_Pro_3
             marcArt.Text = reg.IdMarca.ToString();
             precArt.Text = reg.Precio.ToString();
             descArt.Text = reg.Descripcion;
-            urlImagen.Text = reg.Imagen;
-            if(reg.Imagen !=null)
-            imagArt.Load(reg.Imagen);
+            urlImagen.Text = reg.ImagenUrl;
+            if(reg.ImagenUrl != null)
+            imagArt.Load(reg.ImagenUrl);
 
             Categorias aux = new Categorias();
             newIdCat.DataSource = aux.CargarCbox();
@@ -75,7 +75,7 @@ namespace TP_Winforms_Pro_3
             comando.Parameters.AddWithValue("@Descripcion", reg.Descripcion);
             comando.Parameters.AddWithValue("@IdMarca", reg.IdMarca);
             comando.Parameters.AddWithValue("@IdCategoria", reg.IdCategoria);
-            comando.Parameters.AddWithValue("@ImagenUrl", reg.Imagen);
+            comando.Parameters.AddWithValue("@ImagenUrl", reg.ImagenUrl);
             comando.Parameters.AddWithValue("@Precio", reg.Precio);
             comando.Parameters.AddWithValue("@id", reg.Id);
             comando.ExecuteNonQuery();

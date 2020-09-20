@@ -70,7 +70,6 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             this.btnAgregar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnClick);
             this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
             this.btnAgregar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAgregar_MouseMove);
@@ -88,7 +87,6 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             this.btnModificar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clickModificar);
             this.btnModificar.MouseLeave += new System.EventHandler(this.btnModificar_MouseLeave);
             this.btnModificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnModificar_MouseMove);
@@ -220,9 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TP_Winforms_Pro_3.Properties.Resources.fondo_negro_en_nuevayork;
             this.ClientSize = new System.Drawing.Size(1072, 444);
-
             this.Controls.Add(this.dgbArticulo);
-
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.pbArticulo);

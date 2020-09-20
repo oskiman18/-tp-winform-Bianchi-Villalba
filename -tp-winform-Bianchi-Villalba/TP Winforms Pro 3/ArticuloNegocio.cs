@@ -36,7 +36,7 @@ namespace TP_Winforms_Pro_3
                 aux.Descripcion = (string)lector["Descripcion"];
                 aux.IdMarca = lector.GetInt32(4);
                 aux.IdCategoria = lector.GetInt32(5);
-                aux.Imagen = (string)lector["ImagenUrl"];
+                aux.ImagenUrl = (string)lector["ImagenUrl"];
                 aux.Precio = lector.GetSqlMoney(7);
 
                 //agregro a la lista el obj cargado arriba
@@ -73,7 +73,7 @@ namespace TP_Winforms_Pro_3
                 art.Descripcion = lector.GetString(3);
                 art.Marca = lector.GetString(4);
                 art.Categoria = lector.GetString(5);
-                art.Imagen = lector.GetString(6);
+                art.ImagenUrl = lector.GetString(6);
                 art.Precio = lector.GetSqlMoney(7);
 
                 lista.Add(art);
@@ -81,6 +81,30 @@ namespace TP_Winforms_Pro_3
             }
             conexion.Close();
             return lista;
+        }
+        public bool Eliminar(string query)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+
+            conexion.ConnectionString = "Server=.\\SQLEXPRESS; Database = CATALOGO_DB; Integrated Security =True";
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = query;
+            comando.Connection = conexion;
+
+            conexion.Open();
+            try
+            {
+                lector = comando.ExecuteReader();
+                conexion.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                conexion.Close();
+                return false;
+            }
         }
 
         

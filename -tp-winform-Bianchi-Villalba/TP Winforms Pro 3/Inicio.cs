@@ -96,16 +96,15 @@ namespace TP_Winforms_Pro_3
         
             try
             {
-                //string query = "select * from ARTICULOS";
-                string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.ImagenUrl, A.Precio from ARTICULOS as A";
-                //string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, A.ImagenUrl, A.Precio from ARTICULOS as A join MARCAS as M on M.Id=A.IdMarca join CATEGORIAS as C on C.Id=A.IdCategoria";
+                string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.ImagenUrl, A.Precio from ARTICULOS as A";//string query = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, A.ImagenUrl, A.Precio from ARTICULOS as A join MARCAS as M on M.Id=A.IdMarca join CATEGORIAS as C on C.Id=A.IdCategoria";
                 lOriginal = negocio.listar(query);
 
                 dgbArticulo.DataSource = lOriginal;
 
-                dgbArticulo.Columns[6].Visible = false;
-                dgbArticulo.Columns[7].Visible = false;
-                dgbArticulo.Columns[8].Visible = false;
+                dgbArticulo.Columns[3].Visible = false; //descripcion
+                dgbArticulo.Columns[6].Visible = false; //marca
+                dgbArticulo.Columns[7].Visible = false; //categoria
+                dgbArticulo.Columns[8].Visible = false; //urlimagen
             }
             catch (Exception)
             {
@@ -158,7 +157,7 @@ namespace TP_Winforms_Pro_3
             try
             {
                 Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
-                pbArticulo.Load(art.Imagen);
+                pbArticulo.Load(art.ImagenUrl);
             }
             catch (Exception)
             {
@@ -184,17 +183,48 @@ namespace TP_Winforms_Pro_3
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            int id = -1;
+            DataGridViewRow row = dgbArticulo.CurrentRow;
+
+            if (row != null)
+            {
+                id = Convert.ToInt32(row.Cells["id"].Value);
+            }
+
+
+            if (id >= 0)
+            {
+                eliminar(id);
+            }
+            else 
+            {
+                MessageBox.Show("Seleccione un articulo!!!");
+            }
+            
 
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        void eliminar(int id)
         {
+            ArticuloNegocio artNeg = new ArticuloNegocio();
 
+            DialogResult result = MessageBox.Show("Seguro que dese eliminar?", "Eliminar", MessageBoxButtons.YesNoCancel);
+
+            if (result == DialogResult.Yes)
+            {
+                string query = "delete ARTICULOS where id=" + id;
+
+                if (artNeg.Eliminar(query))
+                {
+                    MessageBox.Show("Eliminado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar.");
+                }
+            }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
