@@ -117,7 +117,8 @@ namespace TP_Winforms_Pro_3
         private void clickModificar(object sender, MouseEventArgs e)
         {
             Articulo reg = null;
-
+            if (dgbArticulo.DataSource != null)
+            {
                 reg = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
 
                 if (reg != null)
@@ -125,6 +126,8 @@ namespace TP_Winforms_Pro_3
                     Modificar ventana = new Modificar(reg);
                     ventana.ShowDialog();
                 }
+            }
+            else MessageBox.Show("No selecciono ningun Item");
             
         }
 
@@ -170,9 +173,13 @@ namespace TP_Winforms_Pro_3
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
-        {      
-            List<Articulo> lfiltro = lOriginal.FindAll(reg => reg.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) );
-            dgbArticulo.DataSource = lfiltro;       
+        {
+            if (dgbArticulo.DataSource != null)
+            {
+                List<Articulo> lfiltro = lOriginal.FindAll(reg => reg.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()));
+                dgbArticulo.DataSource = lfiltro;
+            }
+            else MessageBox.Show("Primero liste los productos");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
