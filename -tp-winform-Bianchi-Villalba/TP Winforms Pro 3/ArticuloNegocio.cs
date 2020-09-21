@@ -107,7 +107,39 @@ namespace TP_Winforms_Pro_3
             }
         }
 
-        
+        public Articulo ArticuloDetalle(string query)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+
+            conexion.ConnectionString = "Server=.\\SQLEXPRESS; Database = CATALOGO_DB; Integrated Security =True";
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = query;
+            comando.Connection = conexion;
+
+            conexion.Open();
+            lector = comando.ExecuteReader();
+            //select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, A.ImagenUrl, A.Precio from ARTICULOS
+            //          0       1       2           3           4                           5                       6           7
+
+            Articulo art = new Articulo();
+            while (lector.Read())
+            {
+                
+                art.Id = lector.GetInt32(0);
+                art.Codigo = lector.GetString(1);
+                art.Nombre = lector.GetString(2);
+                art.Descripcion = lector.GetString(3);
+                art.Marca = lector.GetString(4);
+                art.Categoria = lector.GetString(5);
+                art.ImagenUrl = lector.GetString(6);
+                art.Precio = lector.GetSqlMoney(7);
+
+            }
+            conexion.Close();
+            return art;
+        }
 
     }
 }

@@ -113,23 +113,6 @@ namespace TP_Winforms_Pro_3
             
         }
 
-        private void clickModificar(object sender, MouseEventArgs e)
-        {
-            Articulo reg = null;
-            if (dgbArticulo.DataSource != null)
-            {
-                reg = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
-
-                if (reg != null)
-                {
-                    Modificar ventana = new Modificar(reg);
-                    ventana.ShowDialog();
-                }
-            }
-            else MessageBox.Show("No selecciono ningun Item");
-            
-        }
-
         private void Inicio_Load(object sender, EventArgs e)
         {
             ConexionSQL conexion = new ConexionSQL();
@@ -153,10 +136,9 @@ namespace TP_Winforms_Pro_3
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
-            //listar todo en el inicio
+            Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;          
             try
             {
-                Articulo art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
                 pbArticulo.Load(art.ImagenUrl);
             }
             catch (Exception)
@@ -164,11 +146,47 @@ namespace TP_Winforms_Pro_3
                 
             }
         }
+        public int IDActualDGV()
+        {
+            var filaSeleccionada = dgbArticulo.CurrentRow;
+            int id;
+            if (filaSeleccionada != null) //¿Existe una referencia?
+            {
+                id = Convert.ToInt32(filaSeleccionada.Cells[0].Value);
+                return id;
+            }
+            return -1;
+        }
+        private void clickModificar(object sender, MouseEventArgs e)
+        {
+            Articulo reg = null;
+            if (dgbArticulo.DataSource != null)
+            {
+                reg = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
+
+                if (reg != null)
+                {
+                    Modificar ventana = new Modificar(reg);
+                    ventana.ShowDialog();
+                }
+            }
+            else MessageBox.Show("No selecciono ningun Item");
+
+        }
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            Detalle ventana = new Detalle();
-            ventana.ShowDialog();
+            Articulo art = null;
+            if(dgbArticulo.DataSource != null)
+            {
+                art = (Articulo)dgbArticulo.CurrentRow.DataBoundItem;
+                if(art != null)
+                {
+                    Detalle ventana = new Detalle(art);
+                    ventana.ShowDialog();
+                }
+            }
+            else MessageBox.Show("Selecciona un articulo primero!");
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)

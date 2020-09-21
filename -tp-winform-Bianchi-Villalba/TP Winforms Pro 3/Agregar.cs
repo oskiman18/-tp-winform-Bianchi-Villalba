@@ -60,7 +60,7 @@ namespace TP_Winforms_Pro_3
             comando.Parameters.AddWithValue("@Precio", boxPrecio.Text);
             
             comando.ExecuteNonQuery();
-            
+
 
             try
             {
