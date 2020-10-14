@@ -141,5 +141,24 @@ namespace TP_Winforms_Pro_3
             return art;
         }
 
+        public void Modificarart(Articulo reg)
+        {
+            ConexionSQL conexion = new ConexionSQL();
+            string query = "update ARTICULOS  Set codigo=@codigo,nombre =@nombre, descripcion= @descripcion, idmarca=@idmarca, idcategoria=@idcategoria, imagenurl=@imagenurl, precio=@precio where id=@id";
+            conexion.Abir();
+            SqlCommand comando = new SqlCommand(query, conexion.directorio);
+
+            comando.Parameters.AddWithValue("@Codigo", reg.Codigo);
+            comando.Parameters.AddWithValue("@Nombre", reg.Nombre);
+            comando.Parameters.AddWithValue("@Descripcion", reg.Descripcion);
+            comando.Parameters.AddWithValue("@IdMarca", reg.IdMarca);
+            comando.Parameters.AddWithValue("@IdCategoria", reg.IdCategoria);
+            comando.Parameters.AddWithValue("@ImagenUrl", reg.ImagenUrl);
+            comando.Parameters.AddWithValue("@Precio", reg.Precio);
+            comando.Parameters.AddWithValue("@id", reg.Id);
+            comando.ExecuteNonQuery();
+        }
+
+
     }
 }
